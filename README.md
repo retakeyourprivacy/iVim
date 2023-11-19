@@ -10,22 +10,48 @@ iVim has a working directory contained within the "On My iPad" location in the F
 
 The '.vim' directory within the repo should be downloaded and added to the 'iVim' folder.
 
-In addition, the plugins that work on iVim need to be copied and pasted into the '.vim/bundle' directory. The plugins that work on iVim are those that are written in Vimscript. However, not all Vimscript plugins work (example: FZF).
+## iVim & Vim
 
-Actively used plugin list:
+iVim is not Vim, though it is close. This repo is being modified to work as both a Vim and iVim config interchangeably.
+
+The main issue is the package manager. iVim has a paid for package manager. To an extent, it's possible to work around this by incorporating "hardcoded" plugins and themes. This works best when the package is a single file that doesn't change much.
+
+The following are plugins that have been hardcoded:
+- tpope/vim-pathogen
+- tpope/vim-surround
+
+The following are plugins that have not been hardcoded, and therefore require manual installation into the '.vim/bundle' directory:
 - ctrlpvim/ctrlp.vim
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 
-Some plugins are hardcoded, mainly because they do not reside in the '.vim/bundle' directory. Those plugins are the following:
-- tpope/vim-pathogen
-- tpope/vim-surround
+The same is true for theme packages. The themes that have been hardcoded, unless specified, are those composed of only a single file.
+
+The following are plugins that have been hardcoded:
+- connorholyday/vim-snazzy
+- itsjunetime/rose-pine-vim
+- NLKNguyen/papercolor-theme
+- raphamorim/lucario
+- rose-pine/vim
+
+The following are plugins that have been hardcoded, despite having airline themes in the '.vim/autoload' directory:
+- artanikin/vim-synthwave84
+- ayu-theme/ayu-vim
+- ghifarit53/tokyonight-vim
+- joshdick/onedark.vim
+- lifepillar/vim-gruvbox8
+- morhetz/gruvbox
+- sainnhe/gruvbox-material
+- thedenisnikulin/vim-cyberpunk
+
+Potentially, the themes with more than 1 file can also be added to the '.vim/bundle' directory.
 
 ## Thoughts
 
 Look into:
 - is there a way to perform `git` commands on iPad?
     - any way to clone repos from the iPad itself? directly into iVim directory?
+    - app called 'Working Copy'
 - plugin = Donaldttt/fuzzyy
     - functions similar to telescope on Neovim
     - includes a preview pane
