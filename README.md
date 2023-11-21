@@ -1,8 +1,10 @@
 # .vimrc file for iVim
 
-iVim is a text editing app for iOS devices. It is a clone of Vim 8.1 -- it is **not** a clone of Neovim.
+iVim is a text editing app for iOS devices that brings Vim motions to Apple hardware. It is a clone of Vim 8.1.
 
-Because iVim is a clone of Vim, it lacks the extensibility of a Vim client on a Linux terminal. Therefore, this repo is a modified set of Vim dotfiles that *will* work on iVim. The features that only work on "real Vim" have been commented out or removed.
+However, because iVim is not a perfect clone, it lacks the extensibility of a Vim client on a Linux terminal. Therefore, this repo is a modified set of Vim dotfiles that *will* work on iVim. The features that only work on "real" Vim have been commented out or removed.
+
+This repo is being modified to work as both a Vim and iVim config interchangeably.
 
 ## Instructions
 
@@ -12,11 +14,14 @@ The '.vim' directory within the repo should be downloaded and added to the 'iVim
 
 ## iVim & Vim
 
-iVim is not Vim, though it is close. This repo is being modified to work as both a Vim and iVim config interchangeably.
+The main difference between iVim and "real" Vim is the package manager. iVim has a built-in package manager, for a fee. Otherwise, `pathogen` is a preferable option.
 
-The main issue is the package manager. iVim has a paid for package manager. To an extent, it's possible to work around this by incorporating "hardcoded" plugins and themes. This works best when the package is a single file that doesn't change much.
+To an extent, it's possible to work around this by incorporating "hardcoded" plugins and themes. This works best when the package is a single file that doesn't change much. The same is true for theme packages. The themes that have been hardcoded, unless specified, are those composed of only a single file.
 
-The following are plugins that have been hardcoded:
+## Plugins
+
+The following are plugins that have been hardcoded with no issues:
+- jiangmiao/auto-pairs
 - tpope/vim-pathogen
 - tpope/vim-surround
 
@@ -26,35 +31,32 @@ The following are plugins that have not been hardcoded, and therefore require ma
 - vim-airline/vim-airline
 - vimwiki/vimwiki
 
-The same is true for theme packages. The themes that have been hardcoded, unless specified, are those composed of only a single file.
+## Themes
 
-The following are plugins that have been hardcoded:
+The following are themes that have been hardcoded with no issues:
 - connorholyday/vim-snazzy
 - itsjunetime/rose-pine-vim
 - NLKNguyen/papercolor-theme
 - raphamorim/lucario
 - rose-pine/vim
 
-The following are plugins that have been hardcoded, despite having airline themes in the '.vim/autoload' directory:
+The following are themes that have been hardcoded, despite having airline themes in their '.vim/autoload' directories:
 - artanikin/vim-synthwave84
 - ayu-theme/ayu-vim
 - ghifarit53/tokyonight-vim
-- joshdick/onedark.vim (doesn't load properly without other files)
 - lifepillar/vim-gruvbox8
 - morhetz/gruvbox
-- sainnhe/gruvbox-material (doesn't load properly without other files)
 - thedenisnikulin/vim-cyberpunk
 
-Potentially, the themes with more than 1 file can also be added to the '.vim/bundle' directory.
+The following themes only work properly when installed to the '.vim/bundle' directory:
+- joshdick/onedark.vim
+- sainnhe/gruvbox-material
 
 ## Thoughts
 
 Look into:
-- is there a way to perform `git` commands on iPad?
-    - any way to clone repos from the iPad itself? directly into iVim directory?
-    - app called 'Working Copy'
 - plugin = Donaldttt/fuzzyy
     - functions similar to telescope on Neovim
-    - includes a preview pane
+        - includes a preview pane
     - has a Vim8 branch
-    - as of 2023 Nov 16, Vim8 branch does ***not*** work with iVim
+        - as of 2023 Nov 16, Vim8 branch does ***not*** work with iVim
