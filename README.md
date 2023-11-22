@@ -60,3 +60,7 @@ Look into:
         - includes a preview pane
     - has a Vim8 branch
         - as of 2023 Nov 16, Vim8 branch does ***not*** work with iVim
+
+## Current notes
+
+Whether using iVim or Vim, attempt a `:PlugInstall` when first running the text editor. If plug.vim doesn't work, remove the file and clone plugins into the '.vim/bundle' directory.
